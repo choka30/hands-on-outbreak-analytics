@@ -1,0 +1,27 @@
+# Exact versions of my local run (Python 3.13.8, Linux, CPU only).
+#
+# This file replaces requirements.txt for a local run. Two changes:
+#   + seaborn        - the notebook imports it, but requirements.txt omits it.
+#                      Colab hides the fault, because seaborn is preinstalled there.
+#   + python-dotenv  - the notebook imports it to read GOOGLE_API_KEY from .env.
+#   - rpy2           - listed upstream, imported by no cell, and it needs a working
+#                      R installation.
+#
+# pandas is held below 3.0 because cell 17 calls Series.fillna(method="ffill"),
+# which pandas 3 removed.
+statsmodels==0.14.6
+matplotlib==3.11.2
+seaborn==0.13.2
+codecarbon==3.3.0
+google-generativeai==0.8.6
+instructor==1.15.4
+pydantic==2.13.5
+pdfplumber==0.11.10
+numpy==2.5.3
+pandas==2.3.3
+scipy==1.18.1
+scikit-learn==1.9.1
+python-dotenv==1.2.3
+jupyter==1.1.1
+nbconvert==7.17.1
+ipykernel==7.3.0
